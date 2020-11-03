@@ -26,17 +26,33 @@
 
     <div class="content">
         <div class="signupForm">
-            <!--<h3>Ezen a felületen tud Regisztrálni</h3> -->
+           
             <form action="/action_page.php">
                 <input type="text" id="fname" name="firstname" placeholder="Polgári név.."><br>
                 <input type="text" id="lname" name="lastname" placeholder="Felhasználónév.."><br>
                 <input type="text" id="lname" name="lastname" placeholder="E-mail.."><br>
-                <select id="country" name="country">
-                <option value="australia">Australia</option>
-                <option value="canada">Canada</option>
-                <option value="usa">USA</option>
-                </select><br>
+                <input type="password" id="lname" name="lastname" placeholder="Jelszó.."><br>
+                <input type="password" id="lname" name="lastname" placeholder="Jelszó mégegyszer.."><br>
+                
+                <h3>Sofőrként vagy utasként szeretne regisztrálni? Esetleg mindkettő?</h3>
+                <input type="radio" checked="checked" name="radio">
+                <label class="container">Sofőr
+                
+                <span class="checkmark"></span>
+                </label>
+                <input type="radio" name="radio">
+                <label class="container">Utas
+                
+                <span class="checkmark"></span>
+                </label>
+                <input type="radio" name="radio">
+                <label class="container">Mindkettő  
+                    
+                    <span class="checkmark"></span>
+                    </label><br><br>
                 <input type="submit" value="MEHET!">
+                
+                
             </form>
         </div>
 
