@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+.header .navbar {
+  border-bottom: none;
+}
+
+.header ul {
+  font-size: 18px;
+  font-family: Concert One;
+  list-style: none;
+  text-align: center;
+  text-align: right;
+}
+
+.header li {
+  display: inline-block;
+  margin: 10px;
+}
+
+.header a {
+  text-decoration: none;
+  color: #878889;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.header .active {
+  color: #89b814;
+}
+
+.header :hover {
+  color: #89b814;
+}
+
+.content .signupForm {
+  font-size: 14px;
+  font-family: Concert One;
+}
+/*# sourceMappingURL=style.css.map */

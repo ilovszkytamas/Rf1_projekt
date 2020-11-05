@@ -1,0 +1,5 @@
+Telekocsi\Controller\signupController.class
+Telekocsi\Controller\loginController.class
+Telekocsi\Main.class
+Telekocsi\Model\signupData.class
+Telekocsi\Model\loginData.class
