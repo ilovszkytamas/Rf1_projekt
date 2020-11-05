@@ -6,14 +6,12 @@
     <title>Regisztráció</title>
     <!--Fontawesome cdn-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="signup.css">
 </head>
 <body>
 
     <div class="header">
-        <div class="logo">
-
-        </div>
+    
         <div class="navbar">
             <ul>
                 <li><a href="create.html">Fuvar hírdetés</a></li>
@@ -27,28 +25,47 @@
     </div>
 
     <div class="content">
-
         <div class="signupForm">
+           
             <form action="/action_page.php">
-                <label for="fname">Polgári név</label><br>
-                <input type="text" id="name" name="fname" placeholder="polgári név"><br>
-                <label for="lname">Felhasználónév</label><br>
-                <input type="text" id="userName" name="userName" placeholder="felhasználónév"><br>
-                <label for="lname">Email</label><br>
-                <input type="text" id="email" name="email" placeholder="email"><br>
-                <label for="lname">Jelszó</label><br>
-                <input type="password" id="pwd" name="pwd" placeholder="Jelszó"><br>
-                <label for="lname">Jelszó mégegyszer</label><br>
-                <input type="password" id="pwdCheck" name="pwdCheck" placeholder="Jelszó mégegyszer"><br><br>
-                <input type="submit" value="Mehet!">
-              </form> 
+                <input type="text" id="fname" name="firstname" placeholder="Polgári név.."><br>
+                <input type="text" id="lname" name="lastname" placeholder="Felhasználónév.."><br>
+                <input type="text" id="lname" name="lastname" placeholder="E-mail.."><br>
+                <input type="password" id="lname" name="lastname" placeholder="Jelszó.."><br>
+                <input type="password" id="lname" name="lastname" placeholder="Jelszó mégegyszer.."><br>
+                
+                <h3>Sofőrként vagy utasként szeretne regisztrálni? Esetleg mindkettő?</h3>
+                <input type="radio" checked="checked" name="radio">
+                <label class="container">Sofőr
+                
+                <span class="checkmark"></span>
+                </label>
+                <input type="radio" name="radio">
+                <label class="container">Utas
+                
+                <span class="checkmark"></span>
+                </label>
+                <input type="radio" name="radio">
+                <label class="container">Mindkettő  
+                    
+                    <span class="checkmark"></span>
+                    </label><br><br>
+                <input type="submit" value="MEHET!">
+                
+                
+            </form>
         </div>
+
         <div class="account-exist">
-            <h2>Rendelkezik már felhasználóval?</h2>
-            <p>Jelentkezzen be <a href="login.html">itt</a></p>
+            
+            <h1>Hello!</h1>
+            <h2>Ezen a felületen tud regisztrálni</h2>
+            <h3>Van már felhasználója?</h3>
+            <a href="login.html">Jelentkezzen be itt</a>
         </div>
 
     </div>
     
+
 </body>
 </html>
