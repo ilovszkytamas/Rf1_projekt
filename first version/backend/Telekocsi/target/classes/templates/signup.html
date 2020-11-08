@@ -6,51 +6,73 @@
     <title>Regisztráció</title>
     <!--Fontawesome cdn-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/jquery-3.4.1.min.js"defer></script>
-    <script src="/js/signup.js"defer></script>
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/signup.js"></script>
 </head>
 <body>
 
-    <div class="header">
-        <div class="logo">
-
-        </div>
-        <div class="navbar">
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">Telekocsi.</label>
+    
             <ul>
-                <li><a href="create.html">Fuvar hírdetés</a></li>
+                <li><a href="create.html">Fuvar hirdetés</a></li>
                 <li><a href="booking.html">Fuvar foglalás</a></li>
                 <li><a href="profil.html">Profilom <i class="far fa-user"></i></a></li>
-                <li><a href="login.html">Bejelentkezés</a></li>
+                <li><a href="login.html" >Bejelentkezés</a></li>
                 <li><a href="signup.html" class="active">Regisztráció</a></li>
-                
             </ul>
-        </div>
-    </div>
+      </nav>
 
-    <div class="content">
+    <main>
+        <div class="account-exist">
+            <h1>Hello!</h1>
+            <h2>Ezen a felületen tud regisztrálni</h2>
+            <h3>Van már felhasználója?</h3>
+            <a href="login.html" id="here">Jelentkezzen be itt</a>
+        </div>
 
         <div class="signupForm">
-            <form action="/action_page.php">
-                <label for="fname">Polgári név</label><br>
-                <input type="text" id="name" name="fname" placeholder="polgári név"><br>
-                <label for="lname">Felhasználónév</label><br>
-                <input type="text" id="userName" name="userName" placeholder="felhasználónév"><br>
-                <label for="lname">Email</label><br>
-                <input type="text" id="email" name="email" placeholder="email"><br>
-                <label for="lname">Jelszó</label><br>
-                <input type="password" id="pwd" name="pwd" placeholder="Jelszó"><br>
-                <label for="lname">Jelszó mégegyszer</label><br>
-                <input type="password" id="pwdCheck" name="pwdCheck" placeholder="Jelszó mégegyszer"><br><br>
-                <button type="button" id="registerbt" name="registerbt" value="Mehet!">
-              </form> 
-        </div>
-        <div class="account-exist">
-            <h2>Rendelkezik már felhasználóval?</h2>
-            <p>Jelentkezzen be <a href="login.html">itt</a></p>
+                <input type="text" id="fname" name="firstname" placeholder="Polgári név.."><br>
+                <input type="text" id="lname" name="lastname" placeholder="Felhasználónév.."><br>
+                <input type="text" id="lname" name="lastname" placeholder="E-mail.."><br>
+                <input type="password" id="lname" name="lastname" placeholder="Jelszó.."><br>
+                <input type="password" id="lname" name="lastname" placeholder="Jelszó mégegyszer.."><br><br>
+            
+            <div class="radios">
+                <h3>Sofőrként vagy utasként szeretne regisztrálni? Esetleg mindkettő?</h3>
+                <input type="radio" checked="checked" name="radio">
+                <label class="container">Sofőr
+                
+                <span class="checkmark"></span>
+                </label>
+                <input type="radio" name="radio">
+                <label class="container">Utas
+                
+                <span class="checkmark"></span>
+                </label>
+                <input type="radio" name="radio">
+                <label class="container">Mindkettő  
+                    
+                    <span class="checkmark"></span>
+                    </label><br><br>
+               
+            </div>
+
+            <div class="check">
+            <button type="button" id="signupbt" name="signupbt" value="MEHET!">
+            </div>
+
         </div>
 
-    </div>
+        
+
+    </main>
     
+
 </body>
 </html>

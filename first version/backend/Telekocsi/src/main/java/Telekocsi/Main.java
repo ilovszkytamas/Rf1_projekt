@@ -19,14 +19,10 @@ import java.sql.SQLException;
 
 @SpringBootApplication(exclude = MongoAutoConfiguration.class)
 public class Main {
-    private static DataSource dataSource;
+
     public static final HttpHeaders defaultHeaders = createDefaultHeaders();
     public static void main(String[] args) throws SQLException {
-        dataSource = getDataSource();
-        dataSource.getConnection();
-        JdbcTemplate template = new JdbcTemplate(dataSource);
-        int x = template.queryForObject("select count(*) from users", Integer.class);
-        System.out.println(x);
+
         SpringApplication.run(Main.class, args);
     }
     private static HttpHeaders createDefaultHeaders() {
@@ -35,20 +31,6 @@ public class Main {
         return headers;
     }
 
-    public static DriverManagerDataSource getDataSource() {
-
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-
-        dataSource.setUrl("mysql://localhost:3306/telekocsi");
-
-        dataSource.setUsername("root");
-
-        dataSource.setPassword("root");
-
-        return dataSource;
-    }
 
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");

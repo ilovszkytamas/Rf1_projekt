@@ -1,5 +1,9 @@
 C:\Users\ilovs\IdeaProjects\Telekocsi\src\main\java\Telekocsi\Main.java
 C:\Users\ilovs\IdeaProjects\Telekocsi\src\main\java\Telekocsi\Model\loginData.java
 C:\Users\ilovs\IdeaProjects\Telekocsi\src\main\java\Telekocsi\Model\signupData.java
+C:\Users\ilovs\IdeaProjects\Telekocsi\src\main\java\Telekocsi\Service\UserServiceInterface.java
 C:\Users\ilovs\IdeaProjects\Telekocsi\src\main\java\Telekocsi\Controller\loginController.java
+C:\Users\ilovs\IdeaProjects\Telekocsi\src\main\java\Telekocsi\Model\User.java
 C:\Users\ilovs\IdeaProjects\Telekocsi\src\main\java\Telekocsi\Controller\signupController.java
+C:\Users\ilovs\IdeaProjects\Telekocsi\src\main\java\Telekocsi\Service\UserService.java
+C:\Users\ilovs\IdeaProjects\Telekocsi\src\main\java\Telekocsi\Repository\UserRepository.java

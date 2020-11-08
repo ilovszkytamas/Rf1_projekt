@@ -4,9 +4,11 @@ import static Telekocsi.Main.*;
 import Telekocsi.Model.*;
 //import Telekocsi.Entities.*;
 
+import Telekocsi.Service.UserServiceInterface;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.apache.tomcat.util.json.JSONParser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,8 @@ import java.util.List;
 @RequestMapping("login")
 public class loginController {
 
+    @Autowired
+    UserServiceInterface userService;
 
     @RequestMapping(value = "")
     @ResponseBody
@@ -34,10 +38,15 @@ public class loginController {
     @PostMapping(value = "checkuser")
     public ResponseEntity<String> checkUser(@RequestBody String logindatas) throws IOException {
         System.out.println(logindatas);
-            loginData logindata = new ObjectMapper().readValue(logindatas, loginData.class);
-            //System.out.println(logindata.first());
+        loginData logindata = new ObjectMapper().readValue(logindatas, loginData.class);
 
-        return new ResponseEntity<String>("tucsoooko", HttpStatus.OK);
+        List<User> users = userService.loginCheck(logindata.getUserName(), logindata.getPassword());
+
+        if(users.isEmpty()){
+            return new ResponseEntity<>("szarlogin", HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity<>("jologin", HttpStatus.OK);
     }
 
 

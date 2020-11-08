@@ -11,10 +11,10 @@ $('document').ready(function(){
             url: 'http://localhost:8086/login/checkuser',
             type:'post',
             contentType: 'application/json',
-            dataType:'json',
+            dataType:'text',
             data: JSON.stringify(loginData),
             success:function(data){
-                console.log("suc", data.responseText);
+                console.log("suc", data);
             },
             error: function (data) {
                 console.log("err",data.responseText);

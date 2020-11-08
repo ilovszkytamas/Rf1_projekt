@@ -14,9 +14,6 @@ public class loginData {
     private String userName;
     private String password;
 
-    @Autowired
-    JdbcTemplate jdbcTemplate;
-
     public loginData(String userName, String password){
         this.userName = userName;
         this.password = password;
@@ -32,13 +29,5 @@ public class loginData {
         return password;
     }
 
-    /*public int first(){
-        try {
-            jdbcTemplate.execute("INSERT INTO USERS VALUES()");
 
-        }
-        catch(Exception ex){
-            System.out.println(ex);
-            return 0;
-        }*/
 }
