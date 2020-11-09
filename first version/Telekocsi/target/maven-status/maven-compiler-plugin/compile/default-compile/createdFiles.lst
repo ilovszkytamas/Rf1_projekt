@@ -1,0 +1,15 @@
+Telekocsi\Service\CarService.class
+Telekocsi\Controller\signupController.class
+Telekocsi\Controller\loginController.class
+Telekocsi\Main.class
+Telekocsi\Service\UserServiceInterface.class
+Telekocsi\Service\UserService.class
+Telekocsi\Model\Car.class
+Telekocsi\Service\CarServiceInterface.class
+Telekocsi\Repository\UserRepository.class
+Telekocsi\Model\signupData.class
+Telekocsi\Repository\CarRepository.class
+Telekocsi\Model\User.class
+Telekocsi\Controller\ProfileController.class
+Telekocsi\Model\CarData.class
+Telekocsi\Model\loginData.class

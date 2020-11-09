@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  background: #f3f4f8;
+  color: #374049;
+}
+
+.wrapper {
+  position: fixed;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  background: #fff;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.06);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.06);
+}
+
+.wrapper .navbar {
+  position: relative;
+}
+
+.title-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  font-size: 20px;
+  font-style: normal;
+  margin-top: 16px;
+  color: #374049;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.wrapper .navbar .profile_wrap {
+  padding: 25px;
+  text-align: center;
+}
+
+.wrapper .navbar .profile_wrap .profile_img {
+  width: 70px;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+.wrapper .navbar .profile_wrap .profile_img img {
+  width: 100%;
+}
+
+.wrapper .navbar .profile_wrap .profile_info .name {
+  font-size: 17px;
+  text-transform: capitalize;
+  font-weight: 800;
+  color: #374049;
+}
+
+.wrapper .navbar .profile_wrap .profile_info .role {
+  font-weight: 600;
+  font-size: 15px;
+  color: #90959b;
+}
+
+.wrapper .navbar ul {
+  padding: 10px 30px;
+}
+
+.wrapper .navbar ul li > a {
+  display: block;
+  position: relative;
+  font-size: 14px;
+  padding: 15px;
+  height: 50px;
+  color: #374049;
+  font-weight: 600;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+.wrapper .navbar ul li a > span {
+  display: inline-block;
+}
+
+.wrapper .navbar ul li button {
+  border: none;
+  position: relative;
+  font-size: 14px;
+  padding: 5px;
+  height: 50px;
+  color: #374049;
+  font-weight: 800;
+  background: #fff;
+  width: 140px;
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+}
+
+.wrapper .navbar ul li button .btn-active {
+  color: #89b814;
+  font-weight: 800;
+}
+
+.wrapper .navbar ul li button:hover {
+  color: #89b814;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.wrapper .navbar ul li button
+.content {
+  width: 100%;
+}
+
+.datas {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 79%;
+  margin-left: 250px;
+}
+
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+/*# sourceMappingURL=admin.css.map */

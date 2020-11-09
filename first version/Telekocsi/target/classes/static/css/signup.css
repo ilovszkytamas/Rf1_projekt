@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root{
+  --defaultColor:#b1b2b3;
+  --specialGreen:#89b814;
+  --specialGrey: #374049;
+  --backgroundColor:white;
+  --hoverGreen:#719710;
+
+  --defaultFont: Nunito, sans-serif;
+}
+  *{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  body{
+    font-family: var(--defaultFont);
+  }
+  nav{
+    background: var(--backgroundColor);
+    height: 80px;
+    width: 100%;
+    box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.4);
+  }
+  label.logo{
+    color: var(--specialGreen);
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: 800;
+  }
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  nav ul li a{
+    color: var(--defaultColor);
+    font-size: 20px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    font-weight: 800;
+  }
+  a.active,a:hover{
+    color: var(--specialGreen);
+    transition: .5s;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: var(--defaultColor);
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+
+main{
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  height: calc(100vh - 85x);
+  box-sizing: border-box;
+  margin-top: 3vh;
+}
+
+main .account-exist{
+  width: 100vw;
+}
+
+main .account-exist{
+  
+  width: 50%;
+  margin-left: 23vw;
+  margin-right: 23vw;
+  text-align: center;
+}
+
+main .account-exist h1{
+  color:var(--specialGreen);
+}
+
+main .account-exist h2, h3{
+  color:var(--specialGrey);
+}
+
+#here{
+  color:var(--specialGreen);
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+main .signupForm{
+  
+  width: 100vw;
+  
+}
+
+main .signupForm input[type="text"] , input[type="password"]{
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  border-bottom:1px solid grey;
+  box-sizing: border-box;
+  outline: none;
+  margin-left: 25vw;
+  margin-right: 25vw;
+
+}
+
+main .signupForm .radios{
+  margin-top: 20px;
+  
+  width: 40vw;
+  margin-left: 30vw;
+  margin-right: 30vw;
+  
+}
+
+main .signupForm .radios input[type="radio"]{
+  margin:5px;
+  
+ 
+}
+
+main .signupForm .check{
+  width: 10vw;
+  margin-right: 45vw;
+  margin-left: 60vw;
+}
+main .signupForm .check input[type="submit"]{
+  
+    background-color:var(--specialGreen);
+    color: white;
+    width: 10vw;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+main .signupForm .check input[type="submit"]:hover{
+  
+  background-color:var(--hoverGreen);
+  
+}
+
+
+
+
+  @media (max-width: 952px){
+
+    main .login_screen .articles{
+      display: none;
+    }
+    label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a{
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 858px){
+    .checkbtn{
+      display: block;
+    }
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: var(--backgroundColor);
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+      font-size: 20px;
+    }
+    a:hover,a.active{
+      background: none;
+      color: var(--specialGreen);
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+  }
+
+#signupbt{
+  background: black;
+  width: 20px;
+  height: 20px;
+}
