@@ -35,4 +35,8 @@ public class CarService implements CarServiceInterface{
         }
     }
 
+    public List<Car> getCarDataOfUser(int userid){
+        return carRepository.getUserCars(userid);
+    }
+
 }

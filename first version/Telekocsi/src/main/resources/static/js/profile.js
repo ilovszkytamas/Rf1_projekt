@@ -14,6 +14,36 @@ $('document').ready(function(){
             console.log("beszoptad",data.responseText);
         }
     });
+    $.ajax({
+        url: 'http://localhost:8086/profile/getCars?id='+Cookies.get("userid"),
+        type:'get',
+        success:function(datas){
+            $("#vehiclelist").append("<tr>");
+            $("#vehiclelist").append("<th>Márka</th>");
+            $("#vehiclelist").append("<th>Típus</th>");
+            $("#vehiclelist").append("<th>Évjárat</th>");
+            $("#vehiclelist").append("<th>Rendszám</th>");
+            $("#vehiclelist").append("<th>Férőhelyek</th>");
+            $("#vehiclelist").append("<th>Szín</th>");
+            $("#vehiclelist").append("</tr>");
+            for(var i = 0; i <= datas.length; i++){
+                var data = JSON.parse(datas[i]);
+                $("#vehiclelist").append("<tr>");
+                $("#vehiclelist").append("<td>"+data.manufacturer+"</td>");
+                $("#vehiclelist").append("<td>"+data.type+"</td>");
+                $("#vehiclelist").append("<td>"+data.year+"</td>");
+                $("#vehiclelist").append("<td>"+data.plate_number+"</td>");
+                $("#vehiclelist").append("<td>"+data.seats+"</td>");
+                $("#vehiclelist").append("<td>"+data.color+"</td>");
+                $("#vehiclelist").append("</tr>");
+            }
+            $("#vehiclelist").append("</tbody>");
+            $("#vehiclelist").append("</table>");
+        },
+        error: function (data) {
+            console.log("beszoptad",data.responseText);
+        }
+    });
 
 
     $("#addCar").click(function(){
