@@ -18,4 +18,36 @@ $('document').ready(function(){
         }
     });
 
+    $("#sendRide").click(function() {
+        var arrival = $('#arrival').val();
+        var departure = $('#departure').val();
+        var price = $('#price').val();
+        var departuretime = $('#departuretime').val();
+        var arrivaltime = $('#arrivaltime').val();
+
+        var selectedcar = $("#cars option:selected").text();
+
+        var rideData = {
+            departure: departure,
+            arrival: arrival,
+            price: price,
+            departuretime: departuretime,
+            arrivaltime: arrivaltime,
+            selectedcar: selectedcar
+        };
+
+
+    $.ajax({
+        url: 'http://localhost:8086/create/addRide',
+        type:'post',
+        contentType: 'application/json',
+        dataType: 'text',
+        data: JSON.stringify(rideData),
+        success: function (data) {
+            console.log(data);
+        },
+        error: function (data) {
+            console.log("beszoptad",data.responseText);
+        }
+    });
 });
