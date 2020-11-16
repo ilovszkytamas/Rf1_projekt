@@ -1,6 +1,7 @@
 Telekocsi\Service\CarService.class
 Telekocsi\Controller\signupController.class
 Telekocsi\Controller\loginController.class
+Telekocsi\Controller\CreateRideController.class
 Telekocsi\Main.class
 Telekocsi\Service\UserServiceInterface.class
 Telekocsi\Service\UserService.class
