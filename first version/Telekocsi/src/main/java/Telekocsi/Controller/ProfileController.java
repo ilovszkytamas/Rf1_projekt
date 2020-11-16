@@ -40,7 +40,7 @@ public class ProfileController {
         CarData cardata = new ObjectMapper().readValue(cardatas, CarData.class);
         System.out.println(cardata.toString());
         carService.sendCar(Integer.parseInt(cardata.getUserid()), cardata.getManufacturer(), cardata.getType(), cardata.getPlate_number(), Integer.parseInt(cardata.getSeats()), cardata.getColor(), Integer.parseInt(cardata.getYear()));
-        return new ResponseEntity<>("faszfejűűűűűű", HttpStatus.OK );
+        return new ResponseEntity<>("done", HttpStatus.OK );
     }
 
     @GetMapping(value = "getUserData")

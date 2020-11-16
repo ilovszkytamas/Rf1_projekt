@@ -203,9 +203,3 @@ main .signupForm .check input[type="submit"]:hover{
       left: 0;
     }
   }
-
-#signupbt{
-  background: black;
-  width: 20px;
-  height: 20px;
-}

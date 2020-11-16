@@ -5,9 +5,7 @@
   --defaultColor:#b1b2b3;
   --specialGreen:#89b814;
   --specialGrey: #374049;
-  --backgroundColor:#ffffff;
-  --hoverGreen:#719710;
-  --specialBackgroundColor:rgb(245, 244, 244);
+  --backgroundColor:white;
 
   --defaultFont: Nunito, sans-serif;
 }
@@ -83,7 +81,7 @@
    }
 
    main .login_screen .articles { 
-    color:var(--specialGrey);
+
      height: calc(100vh - 85px);
      display: grid;
      grid-template-rows: 1fr 1fr 1fr;
@@ -91,19 +89,19 @@
      padding: 20px;
      row-gap: 20px;
      font-family: sans-serif;
-     font-weight:600;
+     font-weight:500;
      font-size: 2vh;
      
    }
 
    main .login_screen .articles .article1 { 
-    background-color: var(--specialBackgroundColor);
+
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-gap: 20px;
     text-align: justify;
     padding: 15px;
-    /*border:2px solid grey;*/
+    border:2px solid grey;
     border-radius: 10px;
     
   }
@@ -116,7 +114,7 @@
 
   main .login_screen .articles .article2{ 
 
-    background-color: var(--specialBackgroundColor);
+    border:2px solid grey;
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-gap: 20px;
@@ -135,7 +133,7 @@
 
     text-align: justify;
     padding: 20px;
-    background-color: var(--specialBackgroundColor);
+    border:2px solid grey;
     border-radius: 10px;
     
   }
@@ -196,7 +194,7 @@
   
   main .login_screen .login_side .card .fields input[type=submit] {
     width: 30%;
-    background-color: var(--specialGreen);
+    background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -207,7 +205,7 @@
   }
   
   main .login_screen .login_side .card .fields input[type=submit]:hover {
-    background-color: var(--hoverGreen);
+    background-color: #45a049;
   }
 
 
@@ -260,9 +258,3 @@
       left: 0;
     }
   }
-
-#loginbt{
-    background: black;
-    width: 20px;
-    height: 20px;
-}
