@@ -106,7 +106,8 @@
   .cars{
     display: grid;
     height: 20vh;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 50% 50%;
+   
   }
 
   .cars .first table {
@@ -125,15 +126,31 @@
   background-color: #dddddd;
   }
 
-  input[type=text], select {
-    width: 100%;
+  input[type=text]{
+    width: 10vw;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    margin:5px;
   }
+
+ #addImage{
+  margin:5px;
+  width: 8vw;
+  height: 4vh;
+
+ }
+ #addCar{
+   margin:5px;
+   width: 8vw;
+   height: 4vh;
+  
+ }
+
+
 
 
 

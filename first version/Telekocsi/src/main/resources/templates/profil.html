@@ -7,6 +7,7 @@
     <!--Fontawesome cdn-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="css/profil.css">
+    <link rel="stylesheet" href="profil.css">
     <script src="js/jquery-3.4.1.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js" defer></script>
     <script src="js/profile.js" defer></script>
@@ -25,7 +26,7 @@
                 <li><a href="booking.html">Fuvar foglalás</a></li>
                 <li><a href="profil.html" class="active" >Profilom <i class="far fa-user"></i></a></li>
                 <li><a href="login.html" >Bejelentkezés</a></li>
-                <li><a href="signup.html" class="active">Regisztráció</a></li>
+                <li><a href="signup.html" >Regisztráció</a></li>
             </ul>
       </nav>
 
@@ -61,18 +62,21 @@
 
 
         </div>
+        <div class="addCarContainer">
+            <h3>Új jármű hozzáadása</h3>
+            <input type="text" id="manufacturer" name="firstname" placeholder="Márka..">
+            <input type="text" id="type" name="firstname" placeholder="Típus..">
+            <input type="text" id="plate" name="firstname" placeholder="Rendszám..">
+            <input type="text" id="seats" name="firstname" placeholder="Férőhelyek..">
+            <input type="text" id="color" name="firstname" placeholder="Szín..">
+            <input type="text" id="year" name="firstname" placeholder="Évjárat..">
+
+
+            <button id="addImage"type="button">Kép feltöltése <i class="fas fa-camera"></i></button>
+            <button id="addCar"type="button">Hozzáad <i class="fas fa-car"></i></button>
+        </div>
     </div>
-
-    <input type="text" id="manufacturer" name="firstname" placeholder="Márka..">
-    <input type="text" id="type" name="firstname" placeholder="Típus..">
-    <input type="text" id="plate" name="firstname" placeholder="Rendszám..">
-    <input type="text" id="seats" name="firstname" placeholder="Férőhelyek..">
-    <input type="text" id="color" name="firstname" placeholder="Szín..">
-    <input type="text" id="year" name="firstname" placeholder="Évjárat..">
-
-
-    <button id="addImage"type="button">Kép</button>
-    <button id="addCar"type="button">Hozzáad</button>
+    
     
     </div>
     </main>
