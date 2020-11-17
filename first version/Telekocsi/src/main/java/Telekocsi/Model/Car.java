@@ -2,6 +2,7 @@ package Telekocsi.Model;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "cars")
@@ -11,9 +12,12 @@ public class Car {
     @GeneratedValue
     private int id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "ownerid")
     private User user;
+
+    @OneToMany(mappedBy = "car")
+    private List<Ride> rides;
 
     //plate_number	manufacturer	type	seats	color	year
 

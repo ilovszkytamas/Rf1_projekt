@@ -1,10 +1,8 @@
 package Telekocsi.Model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -14,22 +12,17 @@ public class User {
     @GeneratedValue
     private int id;
 
+    @OneToMany(mappedBy = "user")
+    private List<Car> cars;
+
     private String username;
     private String password;
     private String email;
     private String realname;
-    private boolean is_Admin;
+    private boolean admin;
 
     public User(){}
 
-    /*public User(int id, String username, String password, String email, String realname) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.realname = realname;
-
-    }*/
 
     public int getId() {
         return id;
@@ -71,11 +64,11 @@ public class User {
         this.realname = realname;
     }
 
-    public boolean isIs_Admin() {
-        return is_Admin;
+    public boolean Is_Admin() {
+        return admin;
     }
 
-    public void setIs_Admin(boolean is_Admin) {
-        this.is_Admin = is_Admin;
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 }

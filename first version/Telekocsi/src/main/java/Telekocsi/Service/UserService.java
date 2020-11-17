@@ -31,7 +31,7 @@ public class UserService implements UserServiceInterface{
         user.setPassword(password);
         user.setEmail(email);
         user.setRealname(realname);
-        user.setIs_Admin(false);
+        user.setAdmin(false);
         userRepository.save(user);
     }
 
