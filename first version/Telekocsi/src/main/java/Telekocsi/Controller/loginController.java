@@ -44,7 +44,7 @@ public class loginController {
         List<User> users = userService.loginCheck(logindata.getUserName(), logindata.getPassword());
 
         if(users.isEmpty()){
-            return new ResponseEntity<>("szarlogin", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("rossz login", HttpStatus.BAD_REQUEST);
         }
 
         String userid = String.valueOf(users.get(0).getId());

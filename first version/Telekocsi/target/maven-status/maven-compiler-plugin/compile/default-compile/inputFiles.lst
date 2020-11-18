@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 C:\Users\ilovs\Documents\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Model\signupData.java
 C:\Users\ilovs\Documents\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Service\RideServiceInterface.java
 C:\Users\ilovs\Documents\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Controller\signupController.java
@@ -20,25 +19,3 @@ C:\Users\ilovs\Documents\Telekocsi\first version\Telekocsi\src\main\java\Telekoc
 C:\Users\ilovs\Documents\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Model\Car.java
 C:\Users\ilovs\Documents\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Controller\ProfileController.java
 C:\Users\ilovs\Documents\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Controller\BookingController.java
-=======
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Controller\ProfileController.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Controller\signupController.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Repository\UserRepository.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Repository\RideRepository.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Controller\CreateRideController.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Model\CarData.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Model\Car.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Service\RideService.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Service\UserServiceInterface.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Controller\loginController.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Service\RideServiceInterface.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Repository\CarRepository.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Service\CarServiceInterface.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Service\UserService.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Model\loginData.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Model\Ride.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Main.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Model\signupData.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Service\CarService.java
-C:\Users\farka\Desktop\Telekocsi\first version\Telekocsi\src\main\java\Telekocsi\Model\User.java
->>>>>>> aac07a8d87db939d83365843223b7ce3918ae139

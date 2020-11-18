@@ -13,7 +13,7 @@ $('document').ready(function(){
             email: email
         };
         console.log(name, userName, password, email);
-        if (password === passwordagain) {
+        if (password === passwordagain || name && userName && password && email) {
             $.ajax({
                 url: 'http://localhost:8086/signup/signupData',
                 type: 'post',
@@ -25,6 +25,8 @@ $('document').ready(function(){
                 }
             })
         }
-        else console.log("szarjelszó");
+        else {
+            $("#error").append("Hibás adatok! Ügyelj arra, hogy egyik mező se legyen üres, valamint a jelszavak megegyezenek!");
+        }
     })
 });

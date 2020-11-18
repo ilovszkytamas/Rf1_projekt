@@ -11,20 +11,26 @@ $('document').ready(function(){
             password: password
         };
         console.log(userName, password);
-        $.ajax({
-            url: 'http://localhost:8086/login/checkuser',
-            type:'post',
-            contentType: 'application/json',
-            dataType:'text',
-            data: JSON.stringify(loginData),
-            success:function(data){
-                console.log("suc", data);
-                Cookies.set("userid", data);
-                $(location).attr('href', window.location.protocol + '//' + window.location.host + "/profile");
-            },
-            error: function (data) {
-                console.log("err",data.responseText);
-            }
-        })
+        if (userName && password) {
+            $.ajax({
+                url: 'http://localhost:8086/login/checkuser',
+                type: 'post',
+                contentType: 'application/json',
+                dataType: 'text',
+                data: JSON.stringify(loginData),
+                success: function (data) {
+                    console.log("suc", data);
+                    Cookies.set("userid", data);
+                    $(location).attr('href', window.location.protocol + '//' + window.location.host + "/profile");
+                },
+                error: function (data) {
+                    console.log("err", data.responseText);
+                    $("#error").append("Hibás a felhasználónév vagy a jelszó!");
+                }
+            })
+        }
+        else{
+            alert("Hibás adatok!");
+        }
     })
 });
