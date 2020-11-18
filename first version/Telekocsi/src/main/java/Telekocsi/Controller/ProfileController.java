@@ -26,7 +26,6 @@ public class ProfileController {
     CarService carService;
     @Autowired
     UserService userService;
-
     @Autowired
     RideService rideService;
 

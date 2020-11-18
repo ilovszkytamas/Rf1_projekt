@@ -82,6 +82,7 @@ $('document').ready(function(){
         })
     })
 
+    $( "<h2>Meghirdetett fuvarjaim</h2>" ).insertAfter( "#vehiclelist" );
     $.ajax({
         url: 'http://localhost:8086/profile/getRides?id='+Cookies.get("userid"),
         type:'get',
@@ -98,7 +99,7 @@ $('document').ready(function(){
             for(var i = 0; i <= datas.length; i++){
                 var data = JSON.parse(datas[i]);
                 $("#ridelist").append("<tr>");
-                $("#ridelist").append("<td>"+data.car.id+"</td>");
+                $("#ridelist").append("<td>"+data.car.plate_number+"</td>");
                 $("#ridelist").append("<td>"+data.departure+"</td>");
                 $("#ridelist").append("<td>"+data.arrival+"</td>");
                 var x = new Date(data.departuretime);
@@ -113,6 +114,7 @@ $('document').ready(function(){
             }
             $("#ridelist").append("</tbody>");
             $("#ridelist").append("</table>");
+
         },
         error: function (data) {
             console.log("beszoptad",data.responseText);

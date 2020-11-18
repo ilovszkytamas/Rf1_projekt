@@ -17,4 +17,5 @@ Telekocsi\Model\User.class
 Telekocsi\Controller\ProfileController.class
 Telekocsi\Model\CarData.class
 Telekocsi\Model\loginData.class
+Telekocsi\Controller\BookingController.class
 Telekocsi\Service\RideService.class

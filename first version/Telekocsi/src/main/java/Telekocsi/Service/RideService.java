@@ -39,4 +39,9 @@ public class RideService implements RideServiceInterface {
     public List<Ride> getRideByUserId(int id){
         return rideRepository.getRideByUserId(id);
     }
+
+    public List<Ride> getRideByFromTo(String from, String to){
+        return rideRepository.getRideByFromTo(from, to);
+    }
+
 }
