@@ -1,10 +1,12 @@
 Telekocsi\Service\CarService.class
 Telekocsi\Controller\signupController.class
 Telekocsi\Controller\loginController.class
+Telekocsi\Repository\RideRepository.class
 Telekocsi\Controller\CreateRideController.class
 Telekocsi\Main.class
 Telekocsi\Service\UserServiceInterface.class
 Telekocsi\Model\Ride.class
+Telekocsi\Service\RideServiceInterface.class
 Telekocsi\Service\UserService.class
 Telekocsi\Model\Car.class
 Telekocsi\Service\CarServiceInterface.class
@@ -15,3 +17,4 @@ Telekocsi\Model\User.class
 Telekocsi\Controller\ProfileController.class
 Telekocsi\Model\CarData.class
 Telekocsi\Model\loginData.class
+Telekocsi\Service\RideService.class

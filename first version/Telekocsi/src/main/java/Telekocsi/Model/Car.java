@@ -3,6 +3,7 @@ package Telekocsi.Model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "cars")
@@ -17,7 +18,7 @@ public class Car {
     private User user;
 
     @OneToMany(mappedBy = "car")
-    private List<Ride> rides;
+    private Set<Ride> rides;
 
     //plate_number	manufacturer	type	seats	color	year
 

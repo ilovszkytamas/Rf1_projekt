@@ -81,4 +81,42 @@ $('document').ready(function(){
             }
         })
     })
+
+    $.ajax({
+        url: 'http://localhost:8086/profile/getRides?id='+Cookies.get("userid"),
+        type:'get',
+        success:function(datas){
+            $("#ridelist").append("<tr>");
+            $("#ridelist").append("<th>Rendszám</th>");
+            $("#ridelist").append("<th>Kiindulás hely</th>");
+            $("#ridelist").append("<th>Érkezési hely</th>");
+            $("#ridelist").append("<th>Indulási idő</th>");
+            $("#ridelist").append("<th>Érkezés idő</th>");
+            $("#ridelist").append("<th>Ár</th>");
+            $("#ridelist").append("<th>Férőhely</th>");
+            $("#ridelist").append("</tr>");
+            for(var i = 0; i <= datas.length; i++){
+                var data = JSON.parse(datas[i]);
+                $("#ridelist").append("<tr>");
+                $("#ridelist").append("<td>"+data.car.id+"</td>");
+                $("#ridelist").append("<td>"+data.departure+"</td>");
+                $("#ridelist").append("<td>"+data.arrival+"</td>");
+                var x = new Date(data.departuretime);
+                var y = new Date(data.arrivaltime);
+                var departuretime = x.getFullYear()  + "-" + (x.getMonth()+1) + "-" + x.getDate()+ " " +x.getHours() + ":" + x.getMinutes();
+                var arrivaltime = y.getFullYear()  + "-" + (y.getMonth()+1) + "-" + y.getDate()+ " " +y.getHours() + ":" + y.getMinutes();
+                $("#ridelist").append("<td>"+departuretime+"</td>");
+                $("#ridelist").append("<td>"+arrivaltime+"</td>");
+                $("#ridelist").append("<td>"+data.price+"</td>");
+                $("#ridelist").append("<td>"+data.car.seats+"</td>");
+                $("#ridelist").append("</tr>");
+            }
+            $("#ridelist").append("</tbody>");
+            $("#ridelist").append("</table>");
+        },
+        error: function (data) {
+            console.log("beszoptad",data.responseText);
+        }
+    });
+
 });

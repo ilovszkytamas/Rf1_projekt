@@ -3,6 +3,7 @@ package Telekocsi.Model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -13,13 +14,13 @@ public class User {
     private int id;
 
     @OneToMany(mappedBy = "user")
-    private List<Car> cars;
+    private Set<Car> cars;
 
     private String username;
     private String password;
     private String email;
     private String realname;
-    private boolean admin;
+    private boolean is_admin;
 
     public User(){}
 
@@ -65,10 +66,10 @@ public class User {
     }
 
     public boolean Is_Admin() {
-        return admin;
+        return is_admin;
     }
 
     public void setAdmin(boolean admin) {
-        this.admin = admin;
+        this.is_admin = is_admin;
     }
 }

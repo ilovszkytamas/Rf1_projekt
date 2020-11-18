@@ -3,6 +3,7 @@ package Telekocsi.Controller;
 import Telekocsi.Model.*;
 import Telekocsi.Repository.UserRepository;
 import Telekocsi.Service.CarService;
+import Telekocsi.Service.RideService;
 import Telekocsi.Service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -25,6 +26,9 @@ public class ProfileController {
     CarService carService;
     @Autowired
     UserService userService;
+
+    @Autowired
+    RideService rideService;
 
     @RequestMapping(value = "")
     @ResponseBody
@@ -64,6 +68,25 @@ public class ProfileController {
         int i = 0;
         for(Car car :cars){
             jsonStrings.add(mapper.writeValueAsString(car));
+            i++;
+        }
+
+
+        return new ResponseEntity<>(jsonStrings, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "getRides")
+    public ResponseEntity<List<String>> getRides(@RequestParam String id) throws JsonProcessingException {
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        List<Ride> rides = rideService.getRideByUserId(Integer.parseInt(id));
+
+        ArrayList<String> jsonStrings = new ArrayList<String>();
+        int i = 0;
+        for(Ride ride :rides){
+            System.out.println(ride.getId());
+            jsonStrings.add(mapper.writeValueAsString(ride));
             i++;
         }
 

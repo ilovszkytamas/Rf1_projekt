@@ -12,4 +12,7 @@ public interface CarRepository extends CrudRepository<Car, Integer> {
 
     @Query(value = "SELECT * FROM cars WHERE ownerid=?1", nativeQuery = true)
     public List<Car> getUserCars(int ownerid);
+
+    @Query(value = "SELECT * FROM cars WHERE plate_number=?1", nativeQuery = true)
+    public List<Car> getCarByLicense(String license);
 }

@@ -24,11 +24,11 @@ public class Ride {
     @Column(name="arrival")
     private String arrival;
 
-    @Temporal(TemporalType.TIME)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name="departuretime")
     private Date departuretime;
 
-    @Temporal(TemporalType.TIME)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name="arrivaltime")
     private Date arrivaltime;
 

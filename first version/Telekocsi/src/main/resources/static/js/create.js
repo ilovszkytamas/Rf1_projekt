@@ -27,20 +27,15 @@ $('document').ready(function() {
 
         var selectedcar = $("#cars option:selected").text();
 
-        var rideData = {
-            departure: departure,
-            arrival: arrival,
-            price: price,
-            departuretime: departuretime,
-            arrivaltime: arrivaltime,
-            selectedcar: selectedcar
-        };
+        var rideData = departure +";"+arrival+";"+departuretime+";"+arrivaltime+";"+price+";"+selectedcar;
+        console.log(rideData);
+
         $.ajax({
             url: 'http://localhost:8086/create/addRide',
             type: 'post',
             contentType: 'application/json',
             dataType: 'text',
-            data: JSON.stringify(rideData),
+            data: rideData,
             success: function (data) {
                 console.log(data);
             },
