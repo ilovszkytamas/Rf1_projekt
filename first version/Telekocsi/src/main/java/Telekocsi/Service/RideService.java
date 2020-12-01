@@ -44,4 +44,10 @@ public class RideService implements RideServiceInterface {
         return rideRepository.getRideByFromTo(from, to);
     }
 
+    public void deleteRide(String plate, String departure, String arrival) throws ParseException {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        formatter.setLenient(false);
+        rideRepository.deleteRideByPlateAndTime(plate, formatter.parse(departure), formatter.parse(arrival));
+    }
+
 }

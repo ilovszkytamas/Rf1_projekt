@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -94,6 +95,16 @@ public class ProfileController {
         }
 
         return new ResponseEntity<>(jsonStrings, HttpStatus.OK);
+    }
+
+    @PostMapping(value = "deleteRide")
+    public ResponseEntity<String> getRideData(@RequestBody String datas) throws ParseException {
+
+        String[] data = datas.split(";");
+
+        rideService.deleteRide(data[0], data[1], data[2]);
+
+        return new ResponseEntity<>("tucsok", HttpStatus.OK);
     }
 
 

@@ -87,38 +87,65 @@ $('document').ready(function(){
         url: 'http://localhost:8086/profile/getRides?id='+Cookies.get("userid"),
         type:'get',
         success:function(datas){
-            $("#ridelist").append("<tr>");
-            $("#ridelist").append("<th>Rendszám</th>");
-            $("#ridelist").append("<th>Kiindulás hely</th>");
-            $("#ridelist").append("<th>Érkezési hely</th>");
-            $("#ridelist").append("<th>Indulási idő</th>");
-            $("#ridelist").append("<th>Érkezés idő</th>");
-            $("#ridelist").append("<th>Ár</th>");
-            $("#ridelist").append("<th>Férőhely</th>");
-            $("#ridelist").append("</tr>");
+            var heads = "";
+            heads += "<tr>";
+            heads += "<th>Rendszám</th>"
+            heads += "<th>Kiindulás hely</th>";
+            heads += "<th>Érkezési hely</th>";
+            heads += "<th>Indulási idő</th>";
+            heads += "<th>Érkezés idő</th>";
+            heads += "<th>Ár</th>"
+            heads += "<th>Férőhely</th>"
+            heads += "</tr>"
+            $("#ridelist").append(heads);
             for(var i = 0; i <= datas.length; i++){
+                var rides = "";
                 var data = JSON.parse(datas[i]);
-                $("#ridelist").append("<tr>");
-                $("#ridelist").append("<td>"+data.car.plate_number+"</td>");
-                $("#ridelist").append("<td>"+data.departure+"</td>");
-                $("#ridelist").append("<td>"+data.arrival+"</td>");
+                console.log(data);
+                rides += "<tr>";
+                rides += "<td>"+data.car.plate_number+"</td>";
+                rides += "<td>"+data.departure+"</td>";
+                rides += "<td>"+data.arrival+"</td>";
                 var x = new Date(data.departuretime);
                 var y = new Date(data.arrivaltime);
                 var departuretime = x.getFullYear()  + "-" + (x.getMonth()+1) + "-" + x.getDate()+ " " +x.getHours() + ":" + x.getMinutes();
                 var arrivaltime = y.getFullYear()  + "-" + (y.getMonth()+1) + "-" + y.getDate()+ " " +y.getHours() + ":" + y.getMinutes();
-                $("#ridelist").append("<td>"+departuretime+"</td>");
-                $("#ridelist").append("<td>"+arrivaltime+"</td>");
-                $("#ridelist").append("<td>"+data.price+"</td>");
-                $("#ridelist").append("<td>"+data.car.seats+"</td>");
-                $("#ridelist").append("</tr>");
+                rides += "<td>"+departuretime+"</td>";
+                rides += "<td>"+arrivaltime+"</td>";
+                rides += "<td>"+data.price+"</td>";
+                rides += "<td>"+data.car.seats+"</td>";
+                rides += "<td><button id='ridedelete'>Fuvar törlése</button></td>";
+                rides += "</tr>";
+                $("#ridelist").append(rides);
             }
-            $("#ridelist").append("</tbody>");
-            $("#ridelist").append("</table>");
-
+            $("#ridelist").append("</tbody></table>");
+            console.log("fuvarok:"+rides);
         },
         error: function (data) {
             console.log("beszoptad",data.responseText);
         }
+    });
+
+    $('#ridelist').on('click','#ridedelete', function () {
+        var currentrow = $(this).parent().parent();
+        var plate = currentrow.find('td:eq(0)').text();
+        var departure = currentrow.find('td:eq(3)').text();
+        var arrival = currentrow.find('td:eq(4)').text();
+        var deleteride = plate+";"+departure+";"+arrival;
+        console.log(deleteride);
+        $.ajax({
+            url: 'http://localhost:8086/profile/deleteRide',
+            type:'post',
+            contentType: 'application/json',
+            dataType:'text',
+            data: deleteride,
+            success:function(data){
+                console.log(data);
+            },
+            error: function (data) {
+                console.log("beszoptad",data.responseText);
+            }
+        })
     });
 
 });

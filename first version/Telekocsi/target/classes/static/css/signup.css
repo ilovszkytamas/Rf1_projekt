@@ -157,6 +157,22 @@ main .signupForm .check input[type="submit"]:hover{
   
 }
 
+#signupbt{
+  width: 9vw;
+  height: 5vh;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--specialGreen);
+  color:white;
+  font-weight: 600;
+  cursor: pointer;
+  
+}
+
+#signupbthover{
+  background-color: var(--hoverGreen);
+}
+
 
 
 
