@@ -13,7 +13,7 @@ public class User {
     @GeneratedValue
     private int id;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
     private Set<Car> cars;
 
     private String username;

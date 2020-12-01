@@ -18,31 +18,57 @@ $('document').ready(function(){
         url: 'http://localhost:8086/profile/getCars?id='+Cookies.get("userid"),
         type:'get',
         success:function(datas){
-            $("#vehiclelist").append("<tr>");
-            $("#vehiclelist").append("<th>Márka</th>");
-            $("#vehiclelist").append("<th>Típus</th>");
-            $("#vehiclelist").append("<th>Évjárat</th>");
-            $("#vehiclelist").append("<th>Rendszám</th>");
-            $("#vehiclelist").append("<th>Férőhelyek</th>");
-            $("#vehiclelist").append("<th>Szín</th>");
-            $("#vehiclelist").append("</tr>");
+            console.log(datas);
+            var vehiclelist = "";
+            vehiclelist +="<tr>";
+            vehiclelist +="<th>Márka</th>";
+            vehiclelist +="<th>Típus</th>";
+            vehiclelist +="<th>Évjárat</th>";
+            vehiclelist +="<th>Rendszám</th>";
+            vehiclelist +="<th>Férőhelyek</th>";
+            vehiclelist +="<th>Szín</th>";
+            vehiclelist +="</tr>";
+            $("#vehiclelist").append(vehiclelist);
+            console.log("html:"+ vehiclelist);
             for(var i = 0; i <= datas.length; i++){
                 var data = JSON.parse(datas[i]);
-                $("#vehiclelist").append("<tr>");
-                $("#vehiclelist").append("<td>"+data.manufacturer+"</td>");
-                $("#vehiclelist").append("<td>"+data.type+"</td>");
-                $("#vehiclelist").append("<td>"+data.year+"</td>");
-                $("#vehiclelist").append("<td>"+data.plate_number+"</td>");
-                $("#vehiclelist").append("<td>"+data.seats+"</td>");
-                $("#vehiclelist").append("<td>"+data.color+"</td>");
-                $("#vehiclelist").append("</tr>");
+                vehiclelist = "";
+                vehiclelist +="<tr>";
+                vehiclelist +="<td>"+data.manufacturer+"</td>";
+                vehiclelist +="<td>"+data.type+"</td>";
+                vehiclelist +="<td>"+data.year+"</td>";
+                vehiclelist +="<td>"+data.plate_number+"</td>";
+                vehiclelist +="<td>"+data.seats+"</td>";
+                vehiclelist +="<td>"+data.color+"</td>";
+                vehiclelist +="<td><button class='cardelete'>Autó törlése</button></td>";
+                vehiclelist +="</tr>";
+                $("#vehiclelist").append(vehiclelist);
+                console.log("html:"+ vehiclelist);
             }
-            $("#vehiclelist").append("</tbody>");
-            $("#vehiclelist").append("</table>");
+            vehiclelist +="</table>";
+            console.log("html:"+ vehiclelist);
+            $("#vehiclelist").append(vehiclelist);
         },
         error: function (data) {
             console.log("beszoptad",data.responseText);
         }
+    });
+
+    $('#vehiclelist').on('click','.cardelete', function () {
+        var currentrow = $(this).parent().parent();
+        var plate = currentrow.find('td:eq(3)').text();
+        $.ajax({
+            url: 'http://localhost:8086/profile/deleteCar?plate='+plate,
+            type:'get',
+            contentType: 'application/json',
+            dataType:'text',
+            success:function(data){
+                console.log(data);
+            },
+            error: function (data) {
+                console.log("beszoptad",data.responseText);
+            }
+        })
     });
 
 
@@ -112,9 +138,9 @@ $('document').ready(function(){
                 var arrivaltime = y.getFullYear()  + "-" + (y.getMonth()+1) + "-" + y.getDate()+ " " +y.getHours() + ":" + y.getMinutes();
                 rides += "<td>"+departuretime+"</td>";
                 rides += "<td>"+arrivaltime+"</td>";
-                rides += "<td>"+data.price+"</td>";
+                rides += "<td>"+data.price+" ft</td>";
                 rides += "<td>"+data.car.seats+"</td>";
-                rides += "<td><button id='ridedelete'>Fuvar törlése</button></td>";
+                rides += "<td><button class='ridedelete'>Fuvar törlése</button></td>";
                 rides += "</tr>";
                 $("#ridelist").append(rides);
             }
@@ -126,7 +152,7 @@ $('document').ready(function(){
         }
     });
 
-    $('#ridelist').on('click','#ridedelete', function () {
+    $('#ridelist').on('click','.ridedelete', function () {
         var currentrow = $(this).parent().parent();
         var plate = currentrow.find('td:eq(0)').text();
         var departure = currentrow.find('td:eq(3)').text();

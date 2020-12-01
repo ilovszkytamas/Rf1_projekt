@@ -10,4 +10,5 @@ import java.util.List;
 public interface CarServiceInterface {
 
     List<Car> getCarDataOfUser(int userid);
+    void deleteCarByPlate(String plate);
 }

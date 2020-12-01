@@ -97,12 +97,21 @@ public class ProfileController {
         return new ResponseEntity<>(jsonStrings, HttpStatus.OK);
     }
 
+
     @PostMapping(value = "deleteRide")
-    public ResponseEntity<String> getRideData(@RequestBody String datas) throws ParseException {
+    public ResponseEntity<String> deleteRide(@RequestBody String datas) throws ParseException {
 
         String[] data = datas.split(";");
 
         rideService.deleteRide(data[0], data[1], data[2]);
+
+        return new ResponseEntity<>("tucsok", HttpStatus.OK);
+    }
+
+    @GetMapping(value = "deleteCar")
+    public ResponseEntity<String> deleteCar(@RequestParam String plate) throws ParseException {
+
+        carService.deleteCarByPlate(plate);
 
         return new ResponseEntity<>("tucsok", HttpStatus.OK);
     }

@@ -39,4 +39,8 @@ public class CarService implements CarServiceInterface{
         return carRepository.getUserCars(userid);
     }
 
+    public void deleteCarByPlate(String plate){
+        carRepository.deleteCarByPlate(plate);
+    }
+
 }

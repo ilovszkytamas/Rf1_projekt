@@ -17,7 +17,7 @@ public class Car {
     @JoinColumn(name = "ownerid")
     private User user;
 
-    @OneToMany(mappedBy = "car")
+    @OneToMany(mappedBy = "car", cascade = CascadeType.REMOVE)
     private Set<Ride> rides;
 
     //plate_number	manufacturer	type	seats	color	year
