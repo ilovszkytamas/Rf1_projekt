@@ -15,6 +15,7 @@ $('document').ready(function() {
                 console.log(datas);
                 var rides = "";
                 rides +=("<tr>");
+                rides +=("<th>Azonosító</th>");
                 rides +=("<th>Rendszám</th>");
                 rides +=("<th>Felhasználónév</th>");
                 rides +=("<th>Kiindulás hely</th>");
@@ -30,6 +31,7 @@ $('document').ready(function() {
                     var data = JSON.parse(datas[i]);
                     console.log("faszfeeeeej" + data);
                     rides +=("<tr>");
+                    rides +=("<td>" + data.id + "</td>");
                     rides +=("<td>" + data.car.plate_number + "</td>");
                     rides +=("<td>" + data.car.user.username + "</td>");
                     rides +=("<td>" + data.departure + "</td>");
@@ -56,7 +58,18 @@ $('document').ready(function() {
 
     $('#ridelist').on('click','.choice', function () {
         var currentrow = $(this).parent().parent();
-        var plate = currentrow.find('td:eq(0)').text();
-        console.log(plate);
+        var rideid = currentrow.find('td:eq(0)').text();
+        $.ajax({
+            url: 'http://localhost:8086/booking/bookRide?rideid='+rideid+"&userid="+Cookies.get("userid"),
+            type:'get',
+            contentType: 'application/json',
+            dataType:'text',
+            success:function(data){
+                console.log(data);
+            },
+            error: function (data) {
+                console.log("hiba",data.responseText);
+            }
+        })
     });
 });

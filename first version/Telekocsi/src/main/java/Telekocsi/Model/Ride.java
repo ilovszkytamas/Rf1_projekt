@@ -1,10 +1,8 @@
 package Telekocsi.Model;
 
-
-
-
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "rides")
@@ -18,6 +16,9 @@ public class Ride {
     @ManyToOne
     @JoinColumn(name = "carid")
     private Car car;
+
+    @OneToMany(mappedBy = "ride", cascade = CascadeType.REMOVE)
+    private Set<Reservation> reservations;
 
     @Column(name="departure")
     private String departure;

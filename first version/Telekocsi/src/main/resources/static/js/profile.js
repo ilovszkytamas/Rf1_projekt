@@ -66,7 +66,7 @@ $('document').ready(function(){
                 console.log(data);
             },
             error: function (data) {
-                console.log("beszoptad",data.responseText);
+                console.log("hiba",data.responseText);
             }
         })
     });
@@ -103,7 +103,7 @@ $('document').ready(function(){
                console.log(data);
             },
             error: function (data) {
-                console.log("beszoptad",data.responseText);
+                console.log("hiba",data.responseText);
             }
         })
     })
@@ -148,7 +148,7 @@ $('document').ready(function(){
             console.log("fuvarok:"+rides);
         },
         error: function (data) {
-            console.log("beszoptad",data.responseText);
+            console.log("hiba",data.responseText);
         }
     });
 
@@ -169,7 +169,7 @@ $('document').ready(function(){
                 console.log(data);
             },
             error: function (data) {
-                console.log("beszoptad",data.responseText);
+                console.log("hiba",data.responseText);
             }
         })
     });

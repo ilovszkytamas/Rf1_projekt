@@ -17,6 +17,9 @@ public interface RideRepository extends CrudRepository<Ride, Integer> {
     @Query("SELECT r FROM Ride r JOIN r.car c JOIN c.user u WHERE u.id = ?1")
     List<Ride> getRideByUserId(int id);
 
+    @Query("SELECT r FROM Ride r WHERE r.id = ?1")
+    List<Ride> getRideById(int id);
+
     @Query("SELECT r FROM Ride r JOIN r.car c JOIN c.user u WHERE r.departure = ?1 AND r.arrival = ?2")
     List<Ride> getRideByFromTo(String from, String to);
 

@@ -40,6 +40,10 @@ public class RideService implements RideServiceInterface {
         return rideRepository.getRideByUserId(id);
     }
 
+    public List<Ride> getRideById(int id){
+        return rideRepository.getRideById(id);
+    }
+
     public List<Ride> getRideByFromTo(String from, String to){
         return rideRepository.getRideByFromTo(from, to);
     }

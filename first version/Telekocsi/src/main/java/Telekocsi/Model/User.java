@@ -16,6 +16,7 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
     private Set<Car> cars;
 
+
     private String username;
     private String password;
     private String email;

@@ -5,6 +5,7 @@ import Telekocsi.Model.Car;
 import Telekocsi.Model.Ride;
 import Telekocsi.Model.User;
 import Telekocsi.Service.CarService;
+import Telekocsi.Service.ReservationService;
 import Telekocsi.Service.RideService;
 import Telekocsi.Service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -28,6 +29,9 @@ public class BookingController {
     UserService userService;
     @Autowired
     RideService rideService;
+    @Autowired
+    ReservationService reservationService;
+
 
     @RequestMapping(value = "")
     @ResponseBody
@@ -58,6 +62,13 @@ public class BookingController {
         }
 
         return new ResponseEntity<>(jsonStrings, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "bookRide")
+    public ResponseEntity<String> bookRide(@RequestParam String rideid, @RequestParam String userid) throws JsonProcessingException {
+
+        reservationService.bookRide(Integer.parseInt(rideid), Integer.parseInt(userid));
+        return new ResponseEntity<>("okés", HttpStatus.OK);
     }
 
 }
