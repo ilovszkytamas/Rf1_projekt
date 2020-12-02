@@ -184,6 +184,18 @@
   color:var(--hoverGreen);
 }
 
+#logout{
+  padding: 4px;
+    color:red;
+    font-family: var(--defaultFont);
+    font-size: 15px;
+    font-weight: 700;
+    background-color: white;
+    outline: none;
+    border: 2px solid red;
+    border-radius: 10px;
+}
+
 
 
 
