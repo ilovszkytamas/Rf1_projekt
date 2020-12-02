@@ -3,7 +3,7 @@ $('document').ready(function(){
         $(location).attr('href', window.location.protocol + '//' + window.location.host + "/login");
     }
     $.ajax({
-        url: 'http://localhost:8086/profile/getUserData?id='+Cookies.get("userid"),
+        url: window.location.protocol + '//' + window.location.host + '/profile/getUserData?id='+Cookies.get("userid"),
         type:'get',
         success:function(data){
             var userdata = data.split(";");
@@ -15,7 +15,7 @@ $('document').ready(function(){
         }
     });
     $.ajax({
-        url: 'http://localhost:8086/profile/getCars?id='+Cookies.get("userid"),
+        url: window.location.protocol + '//' + window.location.host +'/profile/getCars?id='+Cookies.get("userid"),
         type:'get',
         success:function(datas){
             console.log(datas);
@@ -50,7 +50,7 @@ $('document').ready(function(){
             $("#vehiclelist").append(vehiclelist);
         },
         error: function (data) {
-            console.log("beszoptad",data.responseText);
+            console.log("hiba",data.responseText);
         }
     });
 
@@ -58,7 +58,7 @@ $('document').ready(function(){
         var currentrow = $(this).parent().parent();
         var plate = currentrow.find('td:eq(3)').text();
         $.ajax({
-            url: 'http://localhost:8086/profile/deleteCar?plate='+plate,
+            url: window.location.protocol + '//' + window.location.host +'/profile/deleteCar?plate='+plate,
             type:'get',
             contentType: 'application/json',
             dataType:'text',
@@ -93,7 +93,7 @@ $('document').ready(function(){
 
         console.log(JSON.stringify(carData));
         $.ajax({
-            url: 'http://localhost:8086/profile/addCar',
+            url: window.location.protocol + '//' + window.location.host +'/profile/addCar',
             type:'post',
             contentType: 'application/json',
             dataType:'text',
@@ -110,11 +110,12 @@ $('document').ready(function(){
 
     $( "<h2>Meghirdetett fuvarjaim</h2>" ).insertAfter( "#vehiclelist" );
     $.ajax({
-        url: 'http://localhost:8086/profile/getRides?id='+Cookies.get("userid"),
+        url: window.location.protocol + '//' + window.location.host + '/profile/getRides?id='+Cookies.get("userid"),
         type:'get',
         success:function(datas){
             var heads = "";
             heads += "<tr>";
+            heads += "<th>Fuvar Azonosító</th>"
             heads += "<th>Rendszám</th>"
             heads += "<th>Kiindulás hely</th>";
             heads += "<th>Érkezési hely</th>";
@@ -129,6 +130,7 @@ $('document').ready(function(){
                 var data = JSON.parse(datas[i]);
                 console.log(data);
                 rides += "<tr>";
+                rides += "<td>"+data.id+"</td>";
                 rides += "<td>"+data.car.plate_number+"</td>";
                 rides += "<td>"+data.departure+"</td>";
                 rides += "<td>"+data.arrival+"</td>";
@@ -160,7 +162,7 @@ $('document').ready(function(){
         var deleteride = plate+";"+departure+";"+arrival;
         console.log(deleteride);
         $.ajax({
-            url: 'http://localhost:8086/profile/deleteRide',
+            url: window.location.protocol + '//' + window.location.host +'/profile/deleteRide',
             type:'post',
             contentType: 'application/json',
             dataType:'text',
@@ -172,6 +174,52 @@ $('document').ready(function(){
                 console.log("hiba",data.responseText);
             }
         })
+    });
+
+    $( "<h2>Fuvarok amikre jelentkeztem</h2>" ).insertAfter( "#ridelist" );
+    $.ajax({
+        url: window.location.protocol + '//' + window.location.host + '/profile/getReservations?id='+Cookies.get("userid"),
+        type:'get',
+        success:function(datas){
+            console.log(datas);
+
+            var heads = "";
+            heads += "<tr>";
+            heads += "<th>Rendszám</th>"
+            heads += "<th>Kiindulás hely</th>";
+            heads += "<th>Érkezési hely</th>";
+            heads += "<th>Indulási idő</th>";
+            heads += "<th>Érkezés idő</th>";
+            heads += "<th>Ár</th>"
+            heads += "<th>Férőhely</th>"
+            heads += "</tr>"
+            $("#reserved").append(heads);
+            for(var i = 0; i <= datas.length; i++){
+                var rides = "";
+                var data = JSON.parse(datas[i]);
+                console.log(data);
+                rides += "<tr>";
+                rides += "<td>"+data.car.plate_number+"</td>";
+                rides += "<td>"+data.departure+"</td>";
+                rides += "<td>"+data.arrival+"</td>";
+                var x = new Date(data.departuretime);
+                var y = new Date(data.arrivaltime);
+                var departuretime = x.getFullYear()  + "-" + (x.getMonth()+1) + "-" + x.getDate()+ " " +x.getHours() + ":" + x.getMinutes();
+                var arrivaltime = y.getFullYear()  + "-" + (y.getMonth()+1) + "-" + y.getDate()+ " " +y.getHours() + ":" + y.getMinutes();
+                rides += "<td>"+departuretime+"</td>";
+                rides += "<td>"+arrivaltime+"</td>";
+                rides += "<td>"+data.price+" ft</td>";
+                rides += "<td>"+data.car.seats+"</td>";
+                rides += "<td><button class='ridedelete'>Fuvar törlése</button></td>";
+                rides += "</tr>";
+                $("#ridelist").append(rides);
+            }
+            $("#reserved").append("</tbody></table>");
+            console.log("fuvarok:"+rides);
+        },
+        error: function (data) {
+            console.log("hiba",data.responseText);
+        }
     });
 
 });

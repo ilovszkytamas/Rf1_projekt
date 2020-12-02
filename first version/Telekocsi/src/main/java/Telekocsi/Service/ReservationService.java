@@ -5,6 +5,8 @@ import Telekocsi.Repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ReservationService implements ReservationServiceInterface{
 
@@ -28,5 +30,9 @@ public class ReservationService implements ReservationServiceInterface{
         reservation.setRide(ride);;
         reservation.setUser(user);
         reservationRepository.save(reservation);
+    }
+
+    public List<Reservation> getReservationsByUserId(int id){
+        return reservationRepository.getReservationsByUserId(id);
     }
 }

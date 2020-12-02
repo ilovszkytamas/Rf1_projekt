@@ -8,7 +8,7 @@ $('document').ready(function() {
         var to = $("#to").val();
         var directions = from+";"+to;
         $.ajax({
-            url: 'http://localhost:8086/booking/getRides?from='+from+"&to="+to,
+            url: window.location.protocol + '//' + window.location.host +'/booking/getRides?from='+from+"&to="+to,
             type: 'get',
             dataType:'json',
             success: function (datas) {
@@ -29,7 +29,6 @@ $('document').ready(function() {
                 for(var i = 0; i <= datas.length; i++) {
                     rides = "";
                     var data = JSON.parse(datas[i]);
-                    console.log("faszfeeeeej" + data);
                     rides +=("<tr>");
                     rides +=("<td>" + data.id + "</td>");
                     rides +=("<td>" + data.car.plate_number + "</td>");
@@ -60,7 +59,7 @@ $('document').ready(function() {
         var currentrow = $(this).parent().parent();
         var rideid = currentrow.find('td:eq(0)').text();
         $.ajax({
-            url: 'http://localhost:8086/booking/bookRide?rideid='+rideid+"&userid="+Cookies.get("userid"),
+            url: window.location.protocol + '//' + window.location.host +'/booking/bookRide?rideid='+rideid+"&userid="+Cookies.get("userid"),
             type:'get',
             contentType: 'application/json',
             dataType:'text',

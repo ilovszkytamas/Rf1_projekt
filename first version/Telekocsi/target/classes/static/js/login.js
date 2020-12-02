@@ -13,7 +13,7 @@ $('document').ready(function(){
         console.log(userName, password);
         if (userName && password) {
             $.ajax({
-                url: 'http://localhost:8086/login/checkuser',
+                url: window.location.protocol + '//' + window.location.host +'/login/checkuser',
                 type: 'post',
                 contentType: 'application/json',
                 dataType: 'text',

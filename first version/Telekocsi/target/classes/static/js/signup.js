@@ -1,4 +1,7 @@
 $('document').ready(function(){
+    if (document.cookie.indexOf("userid") == -1){
+        $(location).attr('href', window.location.protocol + '//' + window.location.host + "/login");
+    }
     $("#signupbt").click(function(){
         var name = $('#name').val();
         var userName= $('#userName').val();
@@ -15,7 +18,7 @@ $('document').ready(function(){
         console.log(name, userName, password, email);
         if (password === passwordagain || name && userName && password && email) {
             $.ajax({
-                url: 'http://localhost:8086/signup/signupData',
+                url: window.location.protocol + '//' + window.location.host + 'signup/signupData"',
                 type: 'post',
                 contentType: 'application/json',
                 dataType: 'text',

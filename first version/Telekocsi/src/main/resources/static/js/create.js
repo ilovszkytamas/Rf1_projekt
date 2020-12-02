@@ -4,7 +4,7 @@ $('document').ready(function() {
     }
 
     $.ajax({
-        url: 'http://localhost:8086/profile/getCars?id=' + Cookies.get("userid"),
+        url: window.location.protocol + '//' + window.location.host +'/profile/getCars?id=' + Cookies.get("userid"),
         type: 'get',
         success: function (datas) {
             for (var i = 0; i <= datas.length; i++) {
@@ -31,7 +31,7 @@ $('document').ready(function() {
         console.log(rideData);
 
         $.ajax({
-            url: 'http://localhost:8086/create/addRide',
+            url: window.location.protocol + '//' + window.location.host +'/create/addRide',
             type: 'post',
             contentType: 'application/json',
             dataType: 'text',
