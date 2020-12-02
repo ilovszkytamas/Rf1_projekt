@@ -151,6 +151,9 @@ main .signupForm .check input[type="submit"]{
     cursor: pointer;
 }
 
+
+
+
 main .signupForm .check input[type="submit"]:hover{
   
   background-color:var(--hoverGreen);
@@ -173,6 +176,19 @@ main .signupForm .check input[type="submit"]:hover{
   background-color: var(--hoverGreen);
 }
 
+#logout{
+  padding: 4px;
+    color:red;
+    font-family: var(--defaultFont);
+    font-size: 15px;
+    font-weight: 600;
+    background-color: white;
+    outline: none;
+    border: 2px solid red;
+    border-radius: 10px;
+}
+
+
 
 
 
@@ -182,11 +198,25 @@ main .signupForm .check input[type="submit"]:hover{
       display: none;
     }
     label.logo{
-      font-size: 30px;
+      font-size: 20px;
       padding-left: 50px;
     }
     nav ul li a{
       font-size: 16px;
+    }
+    #signupbt{
+      width: 30vw;
+      height: 5vh;
+      border: none;
+      border-radius: 10px;
+      background-color: var(--specialGreen);
+      color:white;
+      font-weight: 600;
+      cursor: pointer;
+      
+    }
+    .account-exist{
+      display: none;
     }
   }
   @media (max-width: 858px){
@@ -218,4 +248,20 @@ main .signupForm .check input[type="submit"]:hover{
     #check:checked ~ ul{
       left: 0;
     }
+    #signupbt{
+      width: 30vw;
+      height: 5vh;
+      border: none;
+      border-radius: 10px;
+      background-color: var(--specialGreen);
+      color:white;
+      font-weight: 600;
+      cursor: pointer;
+      
+    }
+    .account-exist{
+      display: none;
+    }
+
+   
   }
