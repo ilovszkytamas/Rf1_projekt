@@ -1,0 +1,10 @@
+htz-540, audi, A4, 5, szürke, 2003
+tro-728, bmw, M3, 4, fekete, 2006
+ket-293, vw, golf, 4, piros, 2000
+emt-879, opel, astra G, 4, szürke, 2002
+slt-251, audi, q7, 5, kék, 2012
+wtg-491, audi, A7, 4, fehér, 2014
+zgf-771, audi, A6, 4, szürke, 2007
+rtz-347, audi, A5, 4, zöld, 2006
+asd-123, audi, A3, 2, szürke, 2002
+dsa-321, bmw, M5, 4, fekete, 2014
