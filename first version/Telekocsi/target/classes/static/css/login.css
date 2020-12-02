@@ -65,6 +65,17 @@
     display: none;
   }
 
+  #logout{
+    padding: 4px;
+      color:red;
+      font-family: var(--defaultFont);
+      font-size: 15px;
+      font-weight: 600;
+      background-color: white;
+      outline: none;
+      border: 2px solid red;
+      border-radius: 10px;
+  }
 
   main{
     margin-top: 5px;
@@ -191,6 +202,32 @@
     box-sizing: border-box;
     outline: none;
   }
+
+  main .login_screen .login_side .card .fields input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    border-bottom:1px solid grey;
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  #loginbt{
+    background-color:var(--specialGreen);
+      color: white;
+      width: 10vw;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      outline: none;
+  }
+
+  button #loginbt :hover{
+    border-color: var(--hoverGreen);
+  }
   
   main .login_screen .login_side .card .fields input[type=submit] {
     width: 30%;
@@ -221,12 +258,74 @@
       display: none;
     }
     label.logo{
-      font-size: 30px;
+      font-size: 20px;
       padding-left: 50px;
     }
     nav ul li a{
       font-size: 16px;
     }
+
+    main .login_screen .login_side .card{
+      height:50vh;
+      margin-top: 5vh;
+      margin-left: 5vh;
+      margin-right: 5vh;
+      padding-top: 50px;
+
+      border:none;
+      box-shadow: none;
+     }
+
+     h1{
+      display: none;
+    }
+
+    main .login_screen .login_side .card .fields{
+     
+      height:25vh;
+      padding-left: 40px;
+      padding-right: 40px;
+      
+   }
+
+    main .login_screen .login_side .card .fields input[type=text] {
+      width: 300px;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: none;
+      border-bottom:1px solid grey;
+      box-sizing: border-box;
+      outline: none;
+    }
+  
+    main .login_screen .login_side .card .fields input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: none;
+      border-bottom:1px solid grey;
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    main{
+      display: block;
+      /*background-color: red;*/
+    }
+    main .login_screen .articles{
+      display: block;
+    }
+    main .login_side{
+      width: 100%;
+       /*background-color: grey;*/
+    }
+
+    main .articles{
+      display: none;
+    }
+
   }
   @media (max-width: 858px){
     .checkbtn{
@@ -257,6 +356,68 @@
     #check:checked ~ ul{
       left: 0;
     }
+    main .login_screen .login_side .card{
+      height:50vh;
+      margin-top: 5vh;
+      margin-left: 5vh;
+      margin-right: 5vh;
+      padding-top: 50px;
+
+      border:none;
+      box-shadow: none;
+     }
+
+     h1{
+      display: none;
+    }
+
+    main .login_screen .login_side .card .fields{
+     
+      height:25vh;
+      width: 100%;
+     
+      
+   }
+
+   main{
+     display: block;
+   }
+
+    main .login_screen .login_side .card .fields input[type=text] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: none;
+      border-bottom:1px solid grey;
+      box-sizing: border-box;
+      outline: none;
+    }
+  
+    main .login_screen .login_side .card .fields input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: none;
+     
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    main .login_screen .articles{
+      display: none;
+    }
+
+    main .login_side{
+      width: 100%;
+      /*background-color: grey;*/
+    }
+    main .articles{
+      display: none;
+    }
+
+
   }
 
   

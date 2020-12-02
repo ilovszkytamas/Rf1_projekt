@@ -130,9 +130,17 @@ public class ProfileController {
     }
 
     @GetMapping(value = "deleteCar")
-    public ResponseEntity<String> deleteCar(@RequestParam String plate) throws ParseException {
+    public ResponseEntity<String> deleteCar(@RequestParam String plate){
 
         carService.deleteCarByPlate(plate);
+
+        return new ResponseEntity<>("tucsok", HttpStatus.OK);
+    }
+
+    @GetMapping(value = "deleteReservation")
+    public ResponseEntity<String> deleteReservation(@RequestParam String id){
+
+        reservationService.deleteReservationById(Integer.parseInt(id));
 
         return new ResponseEntity<>("tucsok", HttpStatus.OK);
     }

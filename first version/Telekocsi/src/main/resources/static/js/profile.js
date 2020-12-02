@@ -18,7 +18,6 @@ $('document').ready(function(){
         url: window.location.protocol + '//' + window.location.host +'/profile/getCars?id='+Cookies.get("userid"),
         type:'get',
         success:function(datas){
-            console.log(datas);
             var vehiclelist = "";
             vehiclelist +="<tr>";
             vehiclelist +="<th>Márka</th>";
@@ -29,7 +28,6 @@ $('document').ready(function(){
             vehiclelist +="<th>Szín</th>";
             vehiclelist +="</tr>";
             $("#vehiclelist").append(vehiclelist);
-            console.log("html:"+ vehiclelist);
             for(var i = 0; i <= datas.length; i++){
                 var data = JSON.parse(datas[i]);
                 vehiclelist = "";
@@ -128,7 +126,6 @@ $('document').ready(function(){
             for(var i = 0; i <= datas.length; i++){
                 var rides = "";
                 var data = JSON.parse(datas[i]);
-                console.log(data);
                 rides += "<tr>";
                 rides += "<td>"+data.id+"</td>";
                 rides += "<td>"+data.car.plate_number+"</td>";
@@ -185,13 +182,14 @@ $('document').ready(function(){
 
             var heads = "";
             heads += "<tr>";
+            heads += "<th>Fuvar Azonosító</th>"
             heads += "<th>Rendszám</th>"
+            heads += "<th>Hirdető neve</th>"
             heads += "<th>Kiindulás hely</th>";
             heads += "<th>Érkezési hely</th>";
             heads += "<th>Indulási idő</th>";
             heads += "<th>Érkezés idő</th>";
             heads += "<th>Ár</th>"
-            heads += "<th>Férőhely</th>"
             heads += "</tr>"
             $("#reserved").append(heads);
             for(var i = 0; i <= datas.length; i++){
@@ -199,20 +197,21 @@ $('document').ready(function(){
                 var data = JSON.parse(datas[i]);
                 console.log(data);
                 rides += "<tr>";
-                rides += "<td>"+data.car.plate_number+"</td>";
-                rides += "<td>"+data.departure+"</td>";
-                rides += "<td>"+data.arrival+"</td>";
-                var x = new Date(data.departuretime);
-                var y = new Date(data.arrivaltime);
+                rides += "<td>"+data.id+"</td>";
+                rides += "<td>"+data.ride.car.plate_number+"</td>";
+                rides += "<td>"+data.ride.car.user.realname+"</td>";
+                rides += "<td>"+data.ride.departure+"</td>";
+                rides += "<td>"+data.ride.arrival+"</td>";
+                var x = new Date(data.ride.departuretime);
+                var y = new Date(data.ride.arrivaltime);
                 var departuretime = x.getFullYear()  + "-" + (x.getMonth()+1) + "-" + x.getDate()+ " " +x.getHours() + ":" + x.getMinutes();
                 var arrivaltime = y.getFullYear()  + "-" + (y.getMonth()+1) + "-" + y.getDate()+ " " +y.getHours() + ":" + y.getMinutes();
                 rides += "<td>"+departuretime+"</td>";
                 rides += "<td>"+arrivaltime+"</td>";
-                rides += "<td>"+data.price+" ft</td>";
-                rides += "<td>"+data.car.seats+"</td>";
-                rides += "<td><button class='ridedelete'>Fuvar törlése</button></td>";
+                rides += "<td>"+data.ride.price+" ft</td>";
+                rides += "<td><button class='reservationdelete'>Jelentkezés törlése</button></td>";
                 rides += "</tr>";
-                $("#ridelist").append(rides);
+                $("#reserved").append(rides);
             }
             $("#reserved").append("</tbody></table>");
             console.log("fuvarok:"+rides);
@@ -220,6 +219,23 @@ $('document').ready(function(){
         error: function (data) {
             console.log("hiba",data.responseText);
         }
+    });
+
+    $('#reserved').on('click','.reservationdelete', function () {
+        var currentrow = $(this).parent().parent();
+        var id = currentrow.find('td:eq(0)').text();
+        $.ajax({
+            url: window.location.protocol + '//' + window.location.host +'/profile/deleteReservation?id='+id,
+            type:'get',
+            contentType: 'application/json',
+            dataType:'text',
+            success:function(data){
+                console.log(data);
+            },
+            error: function (data) {
+                console.log("hiba",data.responseText);
+            }
+        })
     });
 
 });

@@ -35,4 +35,8 @@ public class ReservationService implements ReservationServiceInterface{
     public List<Reservation> getReservationsByUserId(int id){
         return reservationRepository.getReservationsByUserId(id);
     }
+
+    public void deleteReservationById(int id){
+        reservationRepository.deleteReservationById(id);
+    }
 }
