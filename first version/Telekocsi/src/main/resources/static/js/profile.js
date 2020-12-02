@@ -68,6 +68,7 @@ $('document').ready(function(){
             dataType:'text',
             success:function(data){
                 console.log(data);
+                location.reload();
             },
             error: function (data) {
                 console.log("hiba",data.responseText);
@@ -172,6 +173,7 @@ $('document').ready(function(){
             data: deleteride,
             success:function(data){
                 console.log(data);
+                location.reload();
             },
             error: function (data) {
                 console.log("hiba",data.responseText);
@@ -237,6 +239,7 @@ $('document').ready(function(){
             dataType:'text',
             success:function(data){
                 console.log(data);
+                location.reload();
             },
             error: function (data) {
                 console.log("hiba",data.responseText);
