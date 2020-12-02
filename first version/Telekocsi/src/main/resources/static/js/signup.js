@@ -1,6 +1,6 @@
 $('document').ready(function(){
-    if (document.cookie.indexOf("userid") == -1){
-        $(location).attr('href', window.location.protocol + '//' + window.location.host + "/login");
+    if (document.cookie.indexOf("userid") !== -1){
+        $(location).attr('href', window.location.protocol + '//' + window.location.host + "/profile");
     }
     $("#signupbt").click(function(){
         var name = $('#name').val();
