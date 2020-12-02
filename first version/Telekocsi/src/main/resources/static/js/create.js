@@ -3,6 +3,11 @@ $('document').ready(function() {
         $(location).attr('href', window.location.protocol + '//' + window.location.host + "/login");
     }
 
+    $("#logout").click(function () {
+        Cookies.remove("userid");
+        location.reload();
+    })
+
     $.ajax({
         url: window.location.protocol + '//' + window.location.host +'/profile/getCars?id=' + Cookies.get("userid"),
         type: 'get',

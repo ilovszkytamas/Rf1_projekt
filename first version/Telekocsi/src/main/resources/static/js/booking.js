@@ -3,6 +3,11 @@ $('document').ready(function() {
         $(location).attr('href', window.location.protocol + '//' + window.location.host + "/login");
     }
 
+    $("#logout").click(function () {
+        Cookies.remove("userid");
+        location.reload();
+    })
+
     $("#send").click(function () {
         var from = $("#from").val();
         var to = $("#to").val();

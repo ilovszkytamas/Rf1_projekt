@@ -2,6 +2,12 @@ $('document').ready(function(){
     if (document.cookie.indexOf("userid") == -1){
         $(location).attr('href', window.location.protocol + '//' + window.location.host + "/login");
     }
+
+    $("#logout").click(function () {
+        Cookies.remove("userid");
+        location.reload();
+    });
+
     $.ajax({
         url: window.location.protocol + '//' + window.location.host + '/profile/getUserData?id='+Cookies.get("userid"),
         type:'get',
@@ -153,9 +159,9 @@ $('document').ready(function(){
 
     $('#ridelist').on('click','.ridedelete', function () {
         var currentrow = $(this).parent().parent();
-        var plate = currentrow.find('td:eq(0)').text();
-        var departure = currentrow.find('td:eq(3)').text();
-        var arrival = currentrow.find('td:eq(4)').text();
+        var plate = currentrow.find('td:eq(1)').text();
+        var departure = currentrow.find('td:eq(4)').text();
+        var arrival = currentrow.find('td:eq(5)').text();
         var deleteride = plate+";"+departure+";"+arrival;
         console.log(deleteride);
         $.ajax({
