@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuvar létrehozás</title>
+    <!--Fontawesome cdn-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/create.css">
+    <script src="js/jquery-3.4.1.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js" defer></script>
+    <script src="js/create.js" defer></script>
+</head>
+<body>
+
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">Telekocsi.</label>
+    
+            <ul>
+                <li><a href="create" class="active">Fuvar hirdetés</a></li>
+                <li><a href="booking">Fuvar foglalás</a></li>
+                <li><a href="profile">Profilom <i class="far fa-user"></i></a></li>
+                <li><a href="login">Bejelentkezés</a></li>
+                <li><a href="signup" >Regisztráció</a></li>
+				<button id="logout" value="MEHET!">Kijelentkezés</button>
+            </ul>
+      </nav>
+   
+      <div class="create-container">
+        <div class="form">
+          <input type="text" id="departure" name="departure" placeholder="Kiinduló pont"><br>
+          <input type="text" id="arrival" name="arrival" placeholder="Érkezési pont">
+          <input type="text" id="price" name="price" placeholder="Ár"><br>
+          <input type="text" id="departuretime" name="departuretime" placeholder="Indulás (YYYY.MM.DD HH:MM)"><br>
+          <input type="text" id="arrivaltime" name="arrivaltime" placeholder="Érkezés (YYYY.MM.DD HH:MM)"><br>
+          <select id="cars">
+          </select>
+
+              <button id="sendRide" >Fuvar meghirdetése</button>
+      </div>
+    </div>
+
+</body>
+
+<style> 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root{
+  --defaultColor:#b1b2b3;
+  --specialGreen:#89b814;
+  --specialGrey: #374049;
+  --backgroundColor:white;
+  --hoverGreen:#719710;
+
+  --defaultFont: Nunito, sans-serif;
+}
+a{
+  text-decoration: none;
+}
+  *{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  body{
+    font-family: var(--defaultFont);
+  }
+nav{
+    background: var(--backgroundColor);
+    height: 80px;
+    width: 100%;
+    box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.4);
+  }
+  label.logo{
+    color: var(--specialGreen);
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: 800;
+  }
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  nav ul li a{
+    color: var(--defaultColor);
+    font-size: 20px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    font-weight: 800;
+  }
+  a.active,a:hover{
+    color: var(--specialGreen);
+    transition: .5s;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: var(--defaultColor);
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+
+  .create-container{
+    border: 1px solid grey;
+    width: 80vw;
+    height: 30vh;
+    margin: 20vh 10vw 20vh 10vw;
+    padding: 20px 40px 20px 40px;
+    box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+    
+  }
+
+  .create-container .form {  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.create-container .form input[type=text] {  
+  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  
+  
+  
+}
+
+
+
+.create-container .form input {
+  width: 10vw;
+  vertical-align: middle;
+  margin: 1vw 2vw 1vw 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid grey;
+  border-radius: 5px;
+  outline: none;
+}
+
+.create-container .form button {
+  padding: 10px 20px;
+  background-color: var(--specialGreen);
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+}
+
+.create-container .form button:hover {
+  background-color: var(--hoverGreen);
+}
+</style>
+</html>
